@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
-    "build": "rimraf ./lib && mkdirp ./lib && babel src --out-dir lib  --copy-files --presets=react,es2015,stage-0",
+    "build": "rimraf ./lib && mkdirp ./lib && babel src --out-dir lib  --copy-files --presets=react,es2015,stage-0 --ignore index.js,Sample.js",
     "dev": "webpack -d  && webpack-dev-server --hot --output-public-path=/dist/"
   },
   "author": "diegogalvao",
