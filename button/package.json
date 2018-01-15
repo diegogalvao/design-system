@@ -4,14 +4,16 @@
   "description": "button cross plataforn",
   "main": "index.js",
   "scripts": {
-    "start": "watch 'yarn build'",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": ""
+    "start": "npm run dev",
+    "build": "rimraf ./lib && mkdirp ./lib && babel src --out-dir lib  --copy-files --presets=react,es2015,stage-0",
+    "dev": "webpack -d  && webpack-dev-server --hot --output-public-path=/dist/"
   },
   "author": "diegogalvao",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-es2015": "6.24.1",
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-0": "6.24.1",
@@ -20,7 +22,9 @@
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "rimraf": "2.6.2",
-    "watch": "^1.0.2"
+    "watch": "^1.0.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.0"
   },
   "peerDependencies": {
     "react": ">=15.5.4",
