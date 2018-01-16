@@ -2,11 +2,19 @@
   "name": "button",
   "version": "0.0.1",
   "description": "button cross plataforn",
-  "main": "index.js",
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
     "start": "npm run dev",
     "build": "rimraf ./lib && mkdirp ./lib && babel src --out-dir lib  --copy-files --presets=react,es2015,stage-0 --ignore index.js,Sample.js",
-    "dev": "webpack -d  && webpack-dev-server --hot --output-public-path=/dist/"
+    "dev": "webpack -d  && webpack-dev-server --hot --output-public-path=/dist/",
+    "start:native": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test:native": "node node_modules/jest/bin/jest.js --watch"
+  },
+  "jest": {
+    "preset": "jest-expo"
   },
   "author": "diegogalvao",
   "license": "ISC",
@@ -17,10 +25,15 @@
     "babel-preset-es2015": "6.24.1",
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-0": "6.24.1",
+    "expo": "^24.0.2",
+    "jest-expo": "^24.0.0",
     "mkdirp": "0.5.1",
     "prop-types": "^15.6.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",
+    "react-native": "^0.52.0",
+    "react-native-scripts": "^1.8.1",
+    "react-test-renderer": "^16.2.0",
     "rimraf": "2.6.2",
     "watch": "^1.0.2",
     "webpack": "^3.10.0",
@@ -28,7 +41,8 @@
   },
   "peerDependencies": {
     "react": ">=15.5.4",
-    "react-dom": ">=15.5.4"
+    "react-dom": ">=15.5.4",
+    "react-native": "^0.52.0"
   },
   "dependencies": {
     "classnames": "^2.2.5"
